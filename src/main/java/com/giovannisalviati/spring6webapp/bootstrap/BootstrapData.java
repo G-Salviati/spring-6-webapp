@@ -2,8 +2,10 @@ package com.giovannisalviati.spring6webapp.bootstrap;
 
 import com.giovannisalviati.spring6webapp.domain.Author;
 import com.giovannisalviati.spring6webapp.domain.Book;
+import com.giovannisalviati.spring6webapp.domain.Publisher;
 import com.giovannisalviati.spring6webapp.repositories.AuthorRepository;
 import com.giovannisalviati.spring6webapp.repositories.BookRepository;
+import com.giovannisalviati.spring6webapp.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +17,12 @@ public class BootstrapData implements CommandLineRunner {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
-    public BootstrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public BootstrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     @Override
@@ -54,8 +58,18 @@ public class BootstrapData implements CommandLineRunner {
         authorRepository.save(noraSaved);
         authorRepository.save(stiegSaved);
 
+        Publisher bertelsmann = new Publisher();
+        bertelsmann.setPublisherName("Bertelsmann");
+        bertelsmann.setState("Germany");
+        bertelsmann.setCity("Gütersloh");
+        bertelsmann.setZip("33335");
+        bertelsmann.setAddress("Carl-Bertelsmann-Straße 270");
+
+        Publisher bertelsmannSaved = publisherRepository.save(bertelsmann);
+
         System.out.println("in bootstrap!");
         System.out.println("Author count: " + authorRepository.count());
         System.out.println("Book count: " + bookRepository.count());
+        System.out.println("Publisher count: " + publisherRepository.count());
     }
 }
