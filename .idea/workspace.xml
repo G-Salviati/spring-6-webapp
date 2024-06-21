@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="74c51d89-de20-4b7b-85eb-cdbd2ea88c48" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/giovannisalviati/spring6webapp/domain/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/giovannisalviati/spring6webapp/domain/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/giovannisalviati/spring6webapp/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/giovannisalviati/spring6webapp/domain/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,8 +43,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "Spring Boot.Spring6WebappApplication.executor": "Debug",
+    "git-widget-placeholder": "bootstrap-data",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719005018631</updated>
-      <workItem from="1719005020017" duration="1005000" />
+      <workItem from="1719005020017" duration="4470000" />
     </task>
     <servers />
   </component>
