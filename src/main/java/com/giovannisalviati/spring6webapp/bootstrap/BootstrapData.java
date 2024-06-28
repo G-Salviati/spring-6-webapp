@@ -70,8 +70,18 @@ public class BootstrapData implements CommandLineRunner {
 
         Publisher bertelsmannSaved = publisherRepository.save(bertelsmann);
 
+
+        Publisher forlag = new Publisher();
+        forlag.setPublisherName("Norstedts förlag");
+        forlag.setState("Sweden");
+        forlag.setCity("Stockholm");
+        forlag.setZip("11128");
+        forlag.setAddress("Norra Riddarholmshamnen 1");
+
+        Publisher forlagSaved = publisherRepository.save(forlag);
+
         iFeelBadAboutMyNeckSaved.setPublisher(bertelsmannSaved);
-        theGirlWithTheDragonTatooSaved.setPublisher(bertelsmannSaved);
+        theGirlWithTheDragonTatooSaved.setPublisher(forlagSaved);
 
 
         bookRepository.save(iFeelBadAboutMyNeckSaved);
