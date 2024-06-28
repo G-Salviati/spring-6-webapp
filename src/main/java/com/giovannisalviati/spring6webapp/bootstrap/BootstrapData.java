@@ -35,10 +35,6 @@ public class BootstrapData implements CommandLineRunner {
         iFeelBadAboutMyNeck.setTitle("I Feel Bad About My Neck");
         iFeelBadAboutMyNeck.setIsbn("000000");
 
-        Author noraSaved = authorRepository.save(nora);
-        Book iFeelBadAboutMyNeckSaved = bookRepository.save(iFeelBadAboutMyNeck);
-
-
         Author stieg = new Author();
         stieg.setFirstName("Stieg");
         stieg.setLastName("Larsson");
@@ -47,13 +43,20 @@ public class BootstrapData implements CommandLineRunner {
         theGirlWithTheDragonTatoo.setTitle("The Girl With The Dragon Tatoo");
         theGirlWithTheDragonTatoo.setIsbn("000001");
 
+//        persist authors in the database
+        Author noraSaved = authorRepository.save(nora);
         Author stiegSaved = authorRepository.save(stieg);
+
+//        persist books in the database
+        Book iFeelBadAboutMyNeckSaved = bookRepository.save(iFeelBadAboutMyNeck);
         Book theGirlWithTheDragonTatooSaved = bookRepository.save(theGirlWithTheDragonTatoo);
 
 
-//      association between authors and books
+//        association between authors and books
         noraSaved.getBooks().add(iFeelBadAboutMyNeckSaved);
         stiegSaved.getBooks().add(theGirlWithTheDragonTatooSaved);
+        iFeelBadAboutMyNeckSaved.getAuthors().add(noraSaved);
+        theGirlWithTheDragonTatooSaved.getAuthors().add(stiegSaved);
 
         authorRepository.save(noraSaved);
         authorRepository.save(stiegSaved);
@@ -70,8 +73,11 @@ public class BootstrapData implements CommandLineRunner {
         iFeelBadAboutMyNeckSaved.setPublisher(bertelsmannSaved);
         theGirlWithTheDragonTatooSaved.setPublisher(bertelsmannSaved);
 
+
         bookRepository.save(iFeelBadAboutMyNeckSaved);
         bookRepository.save(theGirlWithTheDragonTatooSaved);
+        authorRepository.save(noraSaved);
+        authorRepository.save(stiegSaved);
 
         System.out.println("in bootstrap!");
         System.out.println("Author count: " + authorRepository.count());
